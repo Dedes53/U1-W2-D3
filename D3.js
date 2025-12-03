@@ -238,3 +238,20 @@ console.log(charactersName);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+let randomIndex = Math.floor(Math.random() * starWarsCharacters.length);
+
+function randomMessagge(int) {
+  let name = starWarsCharacters[int].name;
+  let height = starWarsCharacters[int].height;
+  let mass = starWarsCharacters[int].mass;
+  let hair_color = starWarsCharacters[int].hair_color;
+  let skin_color = starWarsCharacters[int].skin_color;
+  let eye_color = starWarsCharacters[int].eye_color;
+  let birth_year = starWarsCharacters[int].birth_year;
+  let gender = starWarsCharacters[int].gender;
+
+  const message = `Hi! my name is ${name}, I was born in the year ${birth_year}. I'm here for the ${gender} main character audition for Star Balls 2 movie. I think I'm perfect for this role due to my ${height}cm, ${hair_color} hair and a faboulous ${eye_color} eyes. And I only weight ${mass}kg!! Oh, my favourite color is ${skin_color}. So... you can see, I'm perfect for this role!`;
+
+  console.log(message);
+}
+randomMessagge(randomIndex);
