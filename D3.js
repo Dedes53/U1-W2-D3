@@ -111,7 +111,12 @@ let charactersName = [];
   Dovrai accedere alla proprietà "name" di ogni oggetto in esso contenuto, e inserirla nell'array "charactersNames" creato precedentemente.
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  let nameCharacter = starWarsCharacters[i].name;
+  charactersName.push(nameCharacter);
+}
 
+console.log(charactersName);
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
