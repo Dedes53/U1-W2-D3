@@ -241,17 +241,38 @@ console.log(charactersName);
 let randomIndex = Math.floor(Math.random() * starWarsCharacters.length);
 
 function randomMessagge(int) {
-  let name = starWarsCharacters[int].name;
-  let height = starWarsCharacters[int].height;
-  let mass = starWarsCharacters[int].mass;
-  let hair_color = starWarsCharacters[int].hair_color;
-  let skin_color = starWarsCharacters[int].skin_color;
-  let eye_color = starWarsCharacters[int].eye_color;
-  let birth_year = starWarsCharacters[int].birth_year;
-  let gender = starWarsCharacters[int].gender;
+  const character = { ...starWarsCharacters[int] };
+  const text = document.getElementById("text");
 
-  const message = `Hi! my name is ${name}, I was born in the year ${birth_year}. I'm here for the ${gender} main character audition for Star Balls 2 movie. I think I'm perfect for this role due to my ${height}cm, ${hair_color} hair and a faboulous ${eye_color} eyes. And I only weight ${mass}kg!! Oh, my favourite color is ${skin_color}. So... you can see, I'm perfect for this role!`;
+  // implementare funzione per evitrare gli "n/a"
+
+  let name = character.name;
+  let nameMessage = ` my name is ${name},`;
+
+  let birth_year = character.birth_year;
+  let birth_yearMessage = ` I was born in the year ${birth_year}`;
+
+  let gender = character.gender;
+  let genderMessage = ` I'm here for the ${gender} main character audition for Star Balls 2 movie.`;
+
+  let height = character.height;
+  let heightMessage = ` ${height}cm,`;
+
+  let hair_color = character.hair_color;
+  let hair_colorMessage = ` ${hair_color} hair`;
+
+  let eye_color = character.eye_color;
+  let eye_colorMessage = ` and a faboulous ${eye_color} eyes`;
+
+  let mass = character.mass;
+  let massMessage = ` And I only weight ${mass}kg!!`;
+
+  let skin_color = character.skin_color;
+  let skin_colorMessage = ` Oh, my favourite color is ${skin_color}.`;
+
+  const message = `Hi!${nameMessage} ${birth_yearMessage}.${genderMessage} I think I'm perfect for this role due to my ${heightMessage} ${hair_colorMessage}${eye_colorMessage}.${massMessage}${skin_colorMessage} So... you can see, I'm perfect for this role!`;
 
   console.log(message);
+  text.textContent = message;
 }
 randomMessagge(randomIndex);
